@@ -42,7 +42,7 @@ export default function SetupPage() {
         </div>
 
         <p style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.06em", marginTop: "12px" }}>
-          // compiled and running since 2024 — no errors found.
+          {"// compiled and running since 2024 — no errors found."}
         </p>
       </div>
     </PageTransition>

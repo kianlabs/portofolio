@@ -48,7 +48,7 @@ export default function HobbiesPage() {
         </div>
 
         <p style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.06em", marginTop: "12px" }}>
-          // executed daily with zero exceptions.
+          {"// executed daily with zero exceptions."}
         </p>
       </div>
     </PageTransition>
