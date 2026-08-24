@@ -20,11 +20,11 @@ export default function SystemFrame({ children }: { children: React.ReactNode })
         <SystemHeader />
         <MenuBar />
         <Navigation />
-        <div style={{ flex: 1, display: "flex", minHeight: 0 }}>
+        <div style={{ flex: 1, display: "flex", minHeight: 0, minWidth: 0 }}>
           <Sidebar />
           <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
             <TabBar />
-            <main style={{ flex: 1, overflowY: "auto", backgroundColor: "var(--bg-main)" }} id="main-content">
+            <main style={{ flex: 1, overflowY: "auto", backgroundColor: "var(--bg-main)", minWidth: 0 }} id="main-content">
               {children}
             </main>
           </div>

@@ -22,7 +22,7 @@ export default function MenuBar() {
   return (
     <nav
       aria-label="Primary navigation"
-      className="hidden md:flex menubar"
+      className="menubar"
     >
       {menus.map((m) => (
         <Link
@@ -36,7 +36,8 @@ export default function MenuBar() {
       ))}
       <span
         aria-hidden="true"
-        style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.08em" }}
+        className="menubar-path"
+        style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "var(--text-dim)", letterSpacing: "0.08em" }}
       >
         ~/kyan.dev/src/app
         <button

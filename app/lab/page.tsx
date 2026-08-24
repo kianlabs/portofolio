@@ -45,7 +45,7 @@ export default function LabPage() {
                 padding: "16px 0",
                 borderBottom: i < labItems.length - 1 ? "1px solid var(--border)" : "none",
                 display: "grid",
-                gridTemplateColumns: "32px 1fr auto",
+                gridTemplateColumns: "32px minmax(0, 1fr) auto",
                 gap: "0 16px",
                 alignItems: "start",
               }}

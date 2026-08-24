@@ -114,6 +114,7 @@ body::after {
   z-index: 10;
   margin: 10px;
   min-height: calc(100vh - 20px);
+  min-height: calc(100svh - 20px);
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
@@ -123,6 +124,7 @@ body::after {
   .system-frame {
     margin: 32px;
     min-height: calc(100vh - 64px);
+    min-height: calc(100svh - 64px);
   }
 }
 
@@ -233,6 +235,13 @@ textarea.sys-input {
   padding: 3px 8px;
   border-bottom: 1px solid var(--border);
   background: var(--bg-panel);
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.menubar::-webkit-scrollbar {
+  display: none;
 }
 
 .menubar-item {
@@ -372,6 +381,14 @@ textarea.sys-input {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sys-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
 }
 
 .sys-header-title {
@@ -417,6 +434,11 @@ textarea.sys-input {
 
   .sys-header-meta {
     margin-left: auto;
+  }
+
+  .menubar-path,
+  .menubar-k {
+    display: none;
   }
 }
 
@@ -712,6 +734,27 @@ textarea.sys-input {
   color: var(--text-main);
   background: rgba(216, 216, 210, 0.05);
   border-left-color: var(--online);
+}
+
+/* ── SYSTEM FIELD (responsive) ── */
+.field-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 2px 12px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.field-label {
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+
+@media (min-width: 480px) {
+  .field-row {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 0 8px;
+  }
 }
 
 .mobile-nav {
