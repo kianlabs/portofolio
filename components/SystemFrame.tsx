@@ -7,6 +7,8 @@ import StatusBar from "./StatusBar";
 import NoiseOverlay from "./NoiseOverlay";
 import CommandPalette from "./CommandPalette";
 import BootSequence from "./BootSequence";
+import EasterEgg from "./EasterEgg";
+import Screensaver from "./Screensaver";
 
 export default function SystemFrame({ children }: { children: React.ReactNode }) {
   return (
@@ -14,6 +16,8 @@ export default function SystemFrame({ children }: { children: React.ReactNode })
       <NoiseOverlay />
       <BootSequence />
       <CommandPalette />
+      <EasterEgg />
+      <Screensaver />
       <div className="system-frame">
         <SystemHeader />
         <MenuBar />

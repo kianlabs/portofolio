@@ -1,6 +1,7 @@
 import PageTransition from "@/components/PageTransition";
 import SectionHeader from "@/components/SectionHeader";
 import SystemField from "@/components/SystemField";
+import GithubStats from "@/components/GithubStats";
 
 const capabilities = [
   { index: "01", label: "FRONTEND", items: "React / Next.js / TypeScript / Tailwind CSS" },
@@ -65,6 +66,9 @@ export default function ProfilePage() {
             </p>
           </div>
         </section>
+
+        {/* GITHUB LIVE STATS */}
+        <GithubStats />
 
         {/* CAPABILITIES */}
         <section aria-label="Capabilities" style={{ marginBottom: "14px" }}>

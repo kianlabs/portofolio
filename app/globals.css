@@ -495,6 +495,83 @@ textarea.sys-input {
   white-space: pre-wrap;
 }
 
+/* ── EASTER EGG (neofetch) ── */
+.egg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 350;
+  background: rgba(5, 5, 5, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.egg-panel {
+  width: min(460px, calc(100vw - 48px));
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+.egg-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.egg-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--text-sec);
+  line-height: 1.6;
+}
+
+.egg-close {
+  margin-top: 16px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.egg-close:hover { color: var(--text-main); }
+
+/* ── SCREENSAVER ── */
+.saver-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: var(--bg-main);
+  animation: saver-in 0.8s ease;
+}
+
+.saver-overlay canvas {
+  display: block;
+  opacity: 0.55;
+}
+
+.saver-hint {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #3a5f47;
+}
+
+@keyframes saver-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .mobile-nav {
   position: fixed;
   inset: 0;
