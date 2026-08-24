@@ -664,6 +664,56 @@ textarea.sys-input {
 .tok-str { color: var(--online); }
 .tok-fn { color: #b28f7c; }
 
+/* ── PROFILE POLISH ── */
+.cap-bar {
+  height: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.cap-bar-fill {
+  height: 100%;
+  width: var(--w, 0%);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--online),
+    var(--online) 6px,
+    #3a5f47 6px,
+    #3a5f47 12px
+  );
+  animation: cap-grow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes cap-grow {
+  from { width: 0; }
+}
+
+.fade-in {
+  animation: fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.learn-row {
+  padding: 4px 6px;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.learn-row:hover {
+  color: var(--text-main);
+  background: rgba(216, 216, 210, 0.05);
+  border-left-color: var(--online);
+}
+
 .mobile-nav {
   position: fixed;
   inset: 0;

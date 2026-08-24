@@ -3,10 +3,10 @@ import SectionHeader from "@/components/SectionHeader";
 import SystemField from "@/components/SystemField";
 
 const capabilities = [
-  { index: "01", label: "FRONTEND", items: "React / Next.js / TypeScript / Tailwind CSS" },
-  { index: "02", label: "BACKEND", items: "Laravel / Node.js / Express" },
-  { index: "03", label: "DATABASE", items: "MySQL / PostgreSQL" },
-  { index: "04", label: "ENVIRONMENT", items: "Linux / Git / Arch" },
+  { index: "01", label: "FRONTEND", items: "React / Next.js / TypeScript / Tailwind CSS", level: 82 },
+  { index: "02", label: "BACKEND", items: "Laravel / Node.js / Express", level: 68 },
+  { index: "03", label: "DATABASE", items: "MySQL / PostgreSQL", level: 62 },
+  { index: "04", label: "ENVIRONMENT", items: "Linux / Git / Arch", level: 78 },
 ];
 
 const learning = [
@@ -82,23 +82,21 @@ export default function ProfilePage() {
 
         {/* CAPABILITIES */}
         <section aria-label="Capabilities" style={{ marginBottom: "14px" }}>
-          <SectionHeader label="CAPABILITIES" />
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <SectionHeader label="CAPABILITIES" meta="$ skill --list" />
+          <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
             {capabilities.map((cap, i) => (
-              <div
-                key={cap.index}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "40px 110px 1fr",
-                  gap: "0 12px",
-                  padding: "10px 0",
-                  borderBottom: i < capabilities.length - 1 ? "1px solid var(--border)" : "none",
-                  alignItems: "start",
-                }}
-              >
-                <span style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.06em", paddingTop: "1px" }}>[{cap.index}]</span>
-                <span style={{ fontSize: "15px", color: "var(--text-sec)", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500 }}>{cap.label}</span>
-                <span style={{ fontSize: "16px", color: "var(--text-main)", lineHeight: "1.6" }}>{cap.items}</span>
+              <div key={cap.index} className="fade-in" style={{ ["--d" as string]: `${i * 120}ms` }}>
+                <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "12px", marginBottom: "6px", flexWrap: "wrap" }}>
+                  <span style={{ display: "flex", alignItems: "baseline", gap: "10px" }}>
+                    <span style={{ fontSize: "13px", color: "var(--text-dim)" }}>[{cap.index}]</span>
+                    <span style={{ fontSize: "15px", color: "var(--text-main)", letterSpacing: "0.1em", fontWeight: 600 }}>{cap.label}</span>
+                  </span>
+                  <span style={{ fontSize: "13px", color: "var(--online)", fontVariantNumeric: "tabular-nums" }}>{cap.level}%</span>
+                </div>
+                <p style={{ fontSize: "14px", color: "var(--text-sec)", lineHeight: "1.5", margin: "0 0 8px 0" }}>{cap.items}</p>
+                <div className="cap-bar">
+                  <div className="cap-bar-fill" style={{ ["--w" as string]: `${cap.level}%`, ["--d" as string]: `${i * 150}ms` }} />
+                </div>
               </div>
             ))}
           </div>
@@ -106,14 +104,21 @@ export default function ProfilePage() {
 
         {/* CURRENTLY LEARNING */}
         <section aria-label="Currently learning">
-          <SectionHeader label="CURRENTLY LEARNING" />
+          <SectionHeader label="CURRENTLY LEARNING" meta="$ tail -f learning.log" />
           <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
             {learning.map((item, i) => (
-              <div key={i} style={{ fontSize: "16px", color: "var(--text-sec)", display: "flex", alignItems: "center", gap: "10px" }}>
+              <div
+                key={i}
+                className="learn-row fade-in"
+                style={{ ["--d" as string]: `${300 + i * 100}ms`, fontSize: "16px", color: "var(--text-sec)", display: "flex", alignItems: "center", gap: "10px" }}
+              >
                 <span style={{ color: "var(--text-dim)", fontSize: "14px" }}>[{String(i + 1).padStart(2, "0")}]</span>
                 {item}
               </div>
             ))}
+            <div style={{ fontSize: "16px", color: "var(--text-dim)", display: "flex", alignItems: "center", gap: "10px", marginTop: "4px" }}>
+              <span>$</span> <span className="cursor-blink" />
+            </div>
           </div>
         </section>
 
