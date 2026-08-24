@@ -33,22 +33,22 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
 
   return (
     <PageTransition>
-      <div style={{ padding: "20px 20px", maxWidth: "800px", margin: "0 auto", width: "100%" }}>
+      <div style={{ padding: "20px 20px", margin: "0 auto", width: "100%" }}>
 
         {/* breadcrumb */}
         <div style={{ marginBottom: "14px", display: "flex", alignItems: "center", gap: "8px" }}>
-          <Link href="/work" style={{ fontSize: "13px", letterSpacing: "0.14em", color: "var(--text-dim)", textDecoration: "none" }}>
+          <Link href="/work" style={{ fontSize: "14px", letterSpacing: "0.14em", color: "var(--text-dim)", textDecoration: "none" }}>
             DIRECTORY / WORK
           </Link>
-          <span style={{ fontSize: "13px", color: "var(--text-dim)" }}>/</span>
-          <span style={{ fontSize: "13px", letterSpacing: "0.14em", color: "var(--text-sec)" }}>
+          <span style={{ fontSize: "14px", color: "var(--text-dim)" }}>/</span>
+          <span style={{ fontSize: "14px", letterSpacing: "0.14em", color: "var(--text-sec)" }}>
             {project.slug.toUpperCase()}
           </span>
         </div>
 
         {/* project header */}
         <div style={{ marginBottom: "14px" }}>
-          <div style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px", display: "flex", flexDirection: "column", gap: "2px" }}>
+          <div style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px", display: "flex", flexDirection: "column", gap: "2px" }}>
             <span>PROJECT_ID : {project.id}</span>
             <span>STATUS     : {project.status}</span>
             <span>YEAR       : {project.year}</span>
@@ -68,7 +68,7 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
               <SystemField
                 label="SOURCE"
                 value={
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-sec)", textDecoration: "none", fontSize: "15px" }}>
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-sec)", textDecoration: "none", fontSize: "16px" }}>
                     {project.githubUrl} ↗
                   </a>
                 }
@@ -89,7 +89,7 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
 
         {/* screenshot placeholder */}
         <div style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg-secondary)", aspectRatio: "16/9", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
-          <span style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT / INTERFACE</span>
+          <span style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT / INTERFACE</span>
         </div>
 
         {/* content sections */}
@@ -100,7 +100,7 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
             return (
               <section key={key} aria-label={label}>
                 <SectionHeader label={label} />
-                <p style={{ fontSize: "17px", color: "var(--text-sec)", lineHeight: "1.8", maxWidth: "640px" }}>{content}</p>
+                <p style={{ fontSize: "18px", color: "var(--text-sec)", lineHeight: "1.8", maxWidth: "640px" }}>{content}</p>
               </section>
             );
           })}
@@ -110,7 +110,7 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
             <SectionHeader label="07 / TECHNOLOGY" />
             <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
               {project.stack.map((s) => (
-                <span key={s} style={{ fontSize: "14px", color: "var(--text-sec)", border: "1px solid var(--border)", padding: "4px 12px", letterSpacing: "0.06em" }}>{s}</span>
+                <span key={s} style={{ fontSize: "15px", color: "var(--text-sec)", border: "1px solid var(--border)", padding: "4px 12px", letterSpacing: "0.06em" }}>{s}</span>
               ))}
             </div>
           </section>

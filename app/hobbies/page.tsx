@@ -9,25 +9,47 @@ const hobbies = [
   "Reading random tech documentation",
 ];
 
+function Ln({ n, children }: { n: number; children?: React.ReactNode }) {
+  return (
+    <div className="cl">
+      <span className="ln">{String(n).padStart(2, "0")}</span>
+      <span className="cl-body">{children}</span>
+    </div>
+  );
+}
+
 export default function HobbiesPage() {
+  let n = 0;
+  const line = () => ++n;
+
   return (
     <PageTransition>
-      <div style={{ padding: "20px 20px", maxWidth: "800px", margin: "0 auto", width: "100%" }}>
+      <div style={{ padding: "20px 20px", width: "100%" }}>
         <div style={{ marginBottom: "14px" }}>
-          <span style={{ fontSize: "12px", letterSpacing: "0.14em", color: "var(--text-dim)" }}>DIRECTORY / HOBBIES</span>
+          <span style={{ fontSize: "11px", letterSpacing: "0.14em", color: "var(--text-dim)" }}>DIRECTORY / HOBBIES</span>
         </div>
 
-        <section aria-label="Hobbies">
-          <SectionHeader label="HOBBIES" />
-          <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-            {hobbies.map((item, i) => (
-              <div key={i} style={{ fontSize: "15px", color: "var(--text-sec)", display: "flex", alignItems: "center", gap: "10px" }}>
-                <span style={{ color: "var(--text-dim)", fontSize: "13px" }}>[{String(i + 1).padStart(2, "0")}]</span>
-                {item}
-              </div>
-            ))}
-          </div>
-        </section>
+        <SectionHeader label="HOBBIES.TS" meta="runtime interests" />
+
+        <div className="codeblock">
+          <Ln n={line()}>
+            <span className="tok-kw">const</span> <span className="tok-var">hobbies</span>: <span className="tok-kw">string</span>[] = [
+          </Ln>
+          {hobbies.map((h) => (
+            <Ln n={line()} key={h}>
+              <span className="tok-str">  &quot;{h}&quot;</span>,
+            </Ln>
+          ))}
+          <Ln n={line()}>{"]"};</Ln>
+          <Ln n={line()}></Ln>
+          <Ln n={line()}>
+            <span className="tok-var">hobbies</span>.<span className="tok-fn">forEach</span>(<span className="tok-var">h</span> =&gt; <span className="tok-var">life</span>.<span className="tok-fn">enjoy</span>(h));
+          </Ln>
+        </div>
+
+        <p style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.06em", marginTop: "12px" }}>
+          // executed daily with zero exceptions.
+        </p>
       </div>
     </PageTransition>
   );

@@ -19,7 +19,7 @@ export default function SystemUptime() {
   const s = seconds % 60;
 
   return (
-    <span style={{ color: "var(--text-dim)", fontSize: "14px", letterSpacing: "0.06em", fontVariantNumeric: "tabular-nums" }}>
+    <span style={{ color: "var(--text-dim)", fontSize: "15px", letterSpacing: "0.06em", fontVariantNumeric: "tabular-nums" }}>
       UPTIME: {pad(h)}:{pad(m)}:{pad(s)}
     </span>
   );

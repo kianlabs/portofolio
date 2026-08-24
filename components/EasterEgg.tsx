@@ -36,7 +36,7 @@ export default function EasterEgg() {
           <Image src="/archlinux.svg" alt="Arch Linux" width={44} height={44} style={{ filter: "grayscale(1)" }} />
           <div>
             <div style={{ color: "var(--text-main)", fontWeight: 700, letterSpacing: "0.08em" }}>guest@kyan.dev</div>
-            <div style={{ color: "var(--text-dim)", fontSize: "12px", letterSpacing: "0.06em" }}>----------------</div>
+            <div style={{ color: "var(--text-dim)", fontSize: "13px", letterSpacing: "0.06em" }}>----------------</div>
           </div>
         </div>
         <div className="egg-specs">
@@ -46,7 +46,7 @@ export default function EasterEgg() {
               <span>{s.value}</span>
             </div>
           ))}
-          <div style={{ marginTop: "8px", color: "var(--text-dim)", fontSize: "12px", letterSpacing: "0.06em" }}>
+          <div style={{ marginTop: "8px", color: "var(--text-dim)", fontSize: "13px", letterSpacing: "0.06em" }}>
             you found the easter egg. btw, i use arch.
           </div>
         </div>

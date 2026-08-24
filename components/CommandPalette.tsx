@@ -60,7 +60,7 @@ export default function CommandPalette() {
         onClick={(e) => e.stopPropagation()}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px", padding: "8px 12px", borderBottom: "1px solid var(--border)" }}>
-          <span style={{ color: "var(--text-dim)", fontSize: "13px" }}>$</span>
+          <span style={{ color: "var(--text-dim)", fontSize: "14px" }}>$</span>
           <input
             ref={inputRef}
             className="cmdk-input"
@@ -83,7 +83,7 @@ export default function CommandPalette() {
           )}
         </div>
         <div style={{ display: "flex", justifyContent: "flex-end", gap: "12px", padding: "5px 12px", borderTop: "1px solid var(--border)" }}>
-          <span style={{ fontSize: "11px", color: "var(--text-dim)", letterSpacing: "0.06em" }}>↑↓ navigate · ↵ open</span>
+          <span style={{ fontSize: "12px", color: "var(--text-dim)", letterSpacing: "0.06em" }}>↑↓ navigate · ↵ open</span>
         </div>
       </div>
     </div>

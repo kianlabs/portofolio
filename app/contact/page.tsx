@@ -26,13 +26,13 @@ export default function ContactPage() {
 
   return (
     <PageTransition>
-      <div style={{ padding: "20px 20px", maxWidth: "800px", margin: "0 auto", width: "100%" }}>
+      <div style={{ padding: "20px 20px", margin: "0 auto", width: "100%" }}>
         <div style={{ marginBottom: "14px" }}>
-          <span style={{ fontSize: "13px", letterSpacing: "0.14em", color: "var(--text-dim)" }}>DIRECTORY / CONTACT</span>
+          <span style={{ fontSize: "14px", letterSpacing: "0.14em", color: "var(--text-dim)" }}>DIRECTORY / CONTACT</span>
         </div>
 
         <div style={{ marginBottom: "14px" }}>
-          <div style={{ fontSize: "13px", color: "var(--online)", letterSpacing: "0.12em", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px" }}>
+          <div style={{ fontSize: "14px", color: "var(--online)", letterSpacing: "0.12em", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px" }}>
             <span className="status-dot" />STATUS: ACCEPTING CONNECTIONS
           </div>
           <h1 style={{ fontSize: "22px", fontWeight: 700, letterSpacing: "0.08em", color: "var(--text-main)", lineHeight: 1.2, textTransform: "uppercase" }}>
@@ -46,28 +46,28 @@ export default function ContactPage() {
             <SectionHeader label="TRANSMIT MESSAGE" />
             {status === "sent" ? (
               <div style={{ padding: "18px", border: "1px solid var(--border)", backgroundColor: "var(--bg-secondary)" }}>
-                <div style={{ fontSize: "13px", color: "var(--online)", letterSpacing: "0.12em", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px" }}>
+                <div style={{ fontSize: "14px", color: "var(--online)", letterSpacing: "0.12em", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px" }}>
                   <span className="status-dot" />TRANSMISSION SUCCESSFUL
                 </div>
-                <p style={{ fontSize: "15px", color: "var(--text-sec)", lineHeight: "1.7" }}>
+                <p style={{ fontSize: "16px", color: "var(--text-sec)", lineHeight: "1.7" }}>
                   Pesan kamu sudah diterima. Saya akan membalas secepatnya.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 <div>
-                  <label htmlFor="name" style={{ display: "block", fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>NAME</label>
-                  <div style={{ fontSize: "14px", color: "var(--text-dim)", marginBottom: "4px" }}>&gt; ---</div>
+                  <label htmlFor="name" style={{ display: "block", fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>NAME</label>
+                  <div style={{ fontSize: "15px", color: "var(--text-dim)", marginBottom: "4px" }}>&gt; ---</div>
                   <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} className="sys-input" placeholder="Nama kamu" autoComplete="name" />
                 </div>
                 <div>
-                  <label htmlFor="email" style={{ display: "block", fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>EMAIL</label>
-                  <div style={{ fontSize: "14px", color: "var(--text-dim)", marginBottom: "4px" }}>&gt; ---</div>
+                  <label htmlFor="email" style={{ display: "block", fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>EMAIL</label>
+                  <div style={{ fontSize: "15px", color: "var(--text-dim)", marginBottom: "4px" }}>&gt; ---</div>
                   <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} className="sys-input" placeholder="email@domain.com" autoComplete="email" />
                 </div>
                 <div>
-                  <label htmlFor="message" style={{ display: "block", fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>MESSAGE</label>
-                  <div style={{ fontSize: "14px", color: "var(--text-dim)", marginBottom: "4px" }}>&gt; ---</div>
+                  <label htmlFor="message" style={{ display: "block", fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>MESSAGE</label>
+                  <div style={{ fontSize: "15px", color: "var(--text-dim)", marginBottom: "4px" }}>&gt; ---</div>
                   <textarea id="message" name="message" required rows={5} value={form.message} onChange={handleChange} className="sys-input" placeholder="Tulis pesanmu di sini..." />
                 </div>
                 <button
@@ -89,7 +89,7 @@ export default function ContactPage() {
               {channels.map((ch, i) => (
                 <div key={ch.label} style={{ padding: "12px 0", borderBottom: i < channels.length - 1 ? "1px solid var(--border)" : "none" }}>
                   <div style={{ fontSize: "9px", color: "var(--text-dim)", letterSpacing: "0.14em", marginBottom: "4px" }}>{ch.label}</div>
-                  <a href={ch.href} target={ch.href.startsWith("mailto") ? undefined : "_blank"} rel={ch.href.startsWith("mailto") ? undefined : "noopener noreferrer"} style={{ fontSize: "15px", color: "var(--text-sec)", textDecoration: "none", letterSpacing: "0.04em" }}>
+                  <a href={ch.href} target={ch.href.startsWith("mailto") ? undefined : "_blank"} rel={ch.href.startsWith("mailto") ? undefined : "noopener noreferrer"} style={{ fontSize: "16px", color: "var(--text-sec)", textDecoration: "none", letterSpacing: "0.04em" }}>
                     {ch.value} ↗
                   </a>
                 </div>

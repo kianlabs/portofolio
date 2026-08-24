@@ -21,9 +21,9 @@ export default function Home() {
 
   return (
     <PageTransition>
-      <div style={{ padding: "20px 20px", maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
+      <div style={{ padding: "20px 20px", margin: "0 auto", width: "100%" }}>
         <div style={{ marginBottom: "14px" }}>
-          <span style={{ fontSize: "13px", letterSpacing: "0.14em", color: "var(--text-dim)" }}>DIRECTORY / HOME</span>
+          <span style={{ fontSize: "14px", letterSpacing: "0.14em", color: "var(--text-dim)" }}>DIRECTORY / HOME</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr]" style={{ gap: "26px" }}>
@@ -71,7 +71,7 @@ export default function Home() {
               {/* callsign */}
               <div
                 style={{
-                  fontSize: "17px",
+                  fontSize: "18px",
                   color: "var(--text-dim)",
                   letterSpacing: "0.12em",
                   marginBottom: "14px",
@@ -85,7 +85,7 @@ export default function Home() {
               <div
                 style={{
                   display: "inline-block",
-                  fontSize: "15px",
+                  fontSize: "16px",
                   color: "var(--text-dim)",
                   letterSpacing: "0.16em",
                   textTransform: "uppercase",
@@ -101,7 +101,7 @@ export default function Home() {
             <div>
               <div
                 style={{
-                  fontSize: "14px",
+                  fontSize: "15px",
                   color: "var(--text-dim)",
                   letterSpacing: "0.08em",
                   marginBottom: "8px",
@@ -115,7 +115,7 @@ export default function Home() {
                   <TypingText text="whoami" speed={80} delay={400} cursor={false} />
                 </span>
               </div>
-              <p style={{ fontSize: "17px", color: "var(--text-main)", lineHeight: "1.8", maxWidth: "520px" }}>
+              <p style={{ fontSize: "18px", color: "var(--text-main)", lineHeight: "1.8", maxWidth: "520px" }}>
                 <TypingText
                   text="Saya Ridzkyan, biasa dipanggil Kyan."
                   speed={28}
@@ -123,7 +123,7 @@ export default function Home() {
                   cursor={false}
                 />
               </p>
-              <p style={{ fontSize: "17px", color: "var(--text-sec)", lineHeight: "1.8", maxWidth: "520px", marginTop: "8px" }}>
+              <p style={{ fontSize: "18px", color: "var(--text-sec)", lineHeight: "1.8", maxWidth: "520px", marginTop: "8px" }}>
                 <TypingText
                   text="Saya membangun aplikasi web dan menikmati proses mengubah sebuah ide menjadi produk yang dapat digunakan."
                   speed={16}
@@ -137,7 +137,7 @@ export default function Home() {
             <div>
               <div
                 style={{
-                  fontSize: "14px",
+                  fontSize: "15px",
                   color: "var(--text-dim)",
                   letterSpacing: "0.08em",
                   marginBottom: "8px",
@@ -156,14 +156,14 @@ export default function Home() {
                   <li
                     key={i}
                     style={{
-                      fontSize: "15px",
+                      fontSize: "16px",
                       color: "var(--text-sec)",
                       display: "flex",
                       alignItems: "center",
                       gap: "12px",
                     }}
                   >
-                    <span style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.06em", minWidth: "28px" }}>
+                    <span style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.06em", minWidth: "28px" }}>
                       [{String(i + 1).padStart(2, "0")}]
                     </span>
                     <TypingText
@@ -209,7 +209,7 @@ export default function Home() {
             <div style={{ border: "1px solid var(--border)", padding: "18px" }}>
                 <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "24px" }}>
                 <div>
-                  <div style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>
+                  <div style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>
                     PROJECT_ID : {featured.id}
                   </div>
                   <h2
@@ -224,7 +224,7 @@ export default function Home() {
                   >
                     <GlitchText text={featured.name} interval={6000} duration={300} />
                   </h2>
-                  <p style={{ fontSize: "17px", color: "var(--text-sec)", lineHeight: "1.7", marginBottom: "14px" }}>
+                  <p style={{ fontSize: "18px", color: "var(--text-sec)", lineHeight: "1.7", marginBottom: "14px" }}>
                     {featured.shortDesc}
                   </p>
                   <div style={{ display: "flex", flexDirection: "column" }}>
@@ -252,7 +252,7 @@ export default function Home() {
                     justifyContent: "center",
                   }}
                 >
-                  <span style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT</span>
+                  <span style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT</span>
                 </div>
               </div>
             </div>

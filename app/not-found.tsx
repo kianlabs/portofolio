@@ -12,14 +12,14 @@ export default function NotFound() {
       }}
     >
       <div style={{ maxWidth: "680px", margin: "0 auto", width: "100%" }}>
-        <p className="panic-line" style={{ color: "var(--text-main)", fontWeight: 700, fontSize: "18px", letterSpacing: "0.04em" }}>
+        <p className="panic-line" style={{ color: "var(--text-main)", fontWeight: 700, fontSize: "19px", letterSpacing: "0.04em" }}>
           Kernel panic - not syncing: Attempted to kill the page
         </p>
         <div style={{ height: "12px" }} />
         <pre
           aria-hidden="true"
           style={{
-            fontSize: "12px",
+            fontSize: "13px",
             lineHeight: 1.7,
             color: "var(--text-dim)",
             whiteSpace: "pre-wrap",
@@ -39,7 +39,7 @@ Call Trace:
         </pre>
         <div style={{ marginTop: "24px", display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
           <Link href="/" className="sys-btn sys-btn-active">[ REBOOT SYSTEM ]</Link>
-          <span style={{ fontSize: "12px", color: "var(--text-dim)", letterSpacing: "0.08em" }}>
+          <span style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.08em" }}>
             error 404 — reboot returns you home
           </span>
         </div>

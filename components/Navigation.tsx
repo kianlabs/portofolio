@@ -30,7 +30,7 @@ export default function Navigation() {
         className="md:hidden flex items-center justify-between border-t"
         style={{ borderColor: "var(--border)", padding: "8px 12px", backgroundColor: "var(--bg-panel)" }}
       >
-        <span style={{ fontSize: "14px", color: "var(--text-sec)", letterSpacing: "0.1em" }}>KYAN.DEV</span>
+        <span style={{ fontSize: "15px", color: "var(--text-sec)", letterSpacing: "0.1em" }}>KYAN.DEV</span>
         <button
           onClick={() => setMenuOpen(true)}
           aria-label="Open navigation menu"
@@ -40,7 +40,7 @@ export default function Navigation() {
             border: "1px solid var(--border)",
             color: "var(--text-sec)",
             fontFamily: "var(--font-mono)",
-            fontSize: "13px",
+            fontSize: "14px",
             letterSpacing: "0.1em",
             padding: "4px 10px",
             cursor: "pointer",
@@ -54,7 +54,7 @@ export default function Navigation() {
       {menuOpen && (
         <div className="mobile-nav" role="dialog" aria-label="Navigation menu" aria-modal="true">
           <div className="flex items-center justify-between mb-8">
-            <span style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.12em" }}>KYAN.DEV // NAVIGATION</span>
+            <span style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.12em" }}>KYAN.DEV // NAVIGATION</span>
             <button
               onClick={() => setMenuOpen(false)}
               aria-label="Close navigation menu"
@@ -63,7 +63,7 @@ export default function Navigation() {
                 border: "1px solid var(--border)",
                 color: "var(--text-sec)",
                 fontFamily: "var(--font-mono)",
-                fontSize: "13px",
+                fontSize: "14px",
                 letterSpacing: "0.1em",
                 padding: "4px 10px",
                 cursor: "pointer",
@@ -87,18 +87,18 @@ export default function Navigation() {
                   textDecoration: "none",
                   color: isActive(item.href) ? "var(--text-main)" : "var(--text-sec)",
                   fontFamily: "var(--font-sans)",
-                  fontSize: "16px",
+                  fontSize: "17px",
                   fontWeight: 500,
                   letterSpacing: "0.06em",
                 }}
               >
-                <span style={{ color: "var(--text-dim)", fontSize: "13px" }}>[{item.index}]</span>
+                <span style={{ color: "var(--text-dim)", fontSize: "14px" }}>[{item.index}]</span>
                 {item.label}
               </Link>
             ))}
           </div>
           <div className="mt-auto pt-8" style={{ borderTop: "1px solid var(--border)" }}>
-            <span style={{ fontSize: "13px", color: "var(--text-dim)" }}>
+            <span style={{ fontSize: "14px", color: "var(--text-dim)" }}>
               STATUS: <span style={{ color: "var(--online)" }}>● ONLINE</span>
             </span>
           </div>
