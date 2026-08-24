@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import PageTransition from "@/components/PageTransition";
 import SectionHeader from "@/components/SectionHeader";
@@ -250,9 +251,21 @@ export default function Home() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    position: "relative",
+                    overflow: "hidden",
                   }}
                 >
-                  <span style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT</span>
+                  {featured.image ? (
+                    <Image
+                      src={featured.image}
+                      alt={`${featured.name} screenshot`}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <span style={{ fontSize: "11px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT</span>
+                  )}
                 </div>
               </div>
             </div>

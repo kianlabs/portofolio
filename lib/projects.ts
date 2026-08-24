@@ -11,6 +11,7 @@ export interface Project {
   stack: string[];
   status: "COMPLETED" | "IN PROGRESS" | "ARCHIVED";
   featured: boolean;
+  image?: string;
   githubUrl?: string;
   liveUrl?: string;
   overview: string;
@@ -34,7 +35,8 @@ export const projects: Project[] = [
     stack: ["Python", "Flask", "Gaussian Naïve Bayes", "MySQL"],
     status: "COMPLETED",
     featured: true,
-    githubUrl: "https://github.com/kianlabs",
+    image: "/umkm-finance.jpg",
+    githubUrl: "https://github.com/kianlabs/skripsi",
     overview:
       "Aplikasi web untuk mengklasifikasikan kondisi keuangan UMKM menggunakan algoritma machine learning Gaussian Naïve Bayes. Dikembangkan sebagai proyek skripsi di Universitas Duta Bangsa Surakarta.",
     problem:
