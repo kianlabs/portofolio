@@ -11,7 +11,9 @@ const navItems = [
   { index: "04", label: "LAB", href: "/lab" },
   { index: "05", label: "SETUP", href: "/setup" },
   { index: "06", label: "HOBBIES", href: "/hobbies" },
-  { index: "07", label: "CONTACT", href: "/contact" },
+  { index: "07", label: "DEVLOG", href: "/devlog" },
+  { index: "08", label: "TERMINAL", href: "/terminal" },
+  { index: "09", label: "CONTACT", href: "/contact" },
 ];
 
 export default function Navigation() {

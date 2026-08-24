@@ -10,18 +10,44 @@ const channels = [
   { label: "LINKEDIN", value: "linkedin.com/in/ridzkyan", href: "https://linkedin.com/in/ridzkyan" },
 ];
 
+const WEB3FORMS_KEY = "1da9b48a-72df-46c2-b7ae-5f22a26ee058";
+
 export default function ContactPage() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [honeypot, setHoneypot] = useState("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (honeypot) return;
     setStatus("sending");
-    setTimeout(() => setStatus("sent"), 1200);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          from_name: "kyandev.vercel.app",
+          subject: `New transmission from ${form.name}`,
+        }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setStatus("sent");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -49,12 +75,27 @@ export default function ContactPage() {
                 <div style={{ fontSize: "14px", color: "var(--online)", letterSpacing: "0.12em", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px" }}>
                   <span className="status-dot" />TRANSMISSION SUCCESSFUL
                 </div>
-                <p style={{ fontSize: "16px", color: "var(--text-sec)", lineHeight: "1.7" }}>
-                  Pesan kamu sudah diterima. Saya akan membalas secepatnya.
+                <p style={{ fontSize: "16px", color: "var(--text-sec)", lineHeight: "1.7", marginBottom: "14px" }}>
+                  Pesan kamu sudah masuk ke inbox saya. Saya akan membalas secepatnya.
                 </p>
+                <button className="sys-btn" onClick={() => setStatus("idle")}>[ SEND ANOTHER ]</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  checked={honeypot === "1"}
+                  onChange={(e) => setHoneypot(e.target.checked ? "1" : "")}
+                  tabIndex={-1}
+                  aria-hidden="true"
+                  style={{ position: "absolute", left: "-9999px", opacity: 0 }}
+                />
+                {status === "error" && (
+                  <div style={{ fontSize: "14px", color: "#a05252", letterSpacing: "0.08em", border: "1px solid #a05252", padding: "10px 14px" }}>
+                    ✕ TRANSMISSION FAILED — cek koneksi kamu atau kirim langsung ke ridzkyan0504@gmail.com
+                  </div>
+                )}
                 <div>
                   <label htmlFor="name" style={{ display: "block", fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>NAME</label>
                   <div style={{ fontSize: "15px", color: "var(--text-dim)", marginBottom: "4px" }}>&gt; ---</div>

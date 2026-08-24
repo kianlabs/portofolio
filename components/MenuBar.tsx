@@ -10,6 +10,8 @@ const menus = [
   { label: "LAB", href: "/lab" },
   { label: "SETUP", href: "/setup" },
   { label: "HOBBIES", href: "/hobbies" },
+  { label: "DEVLOG", href: "/devlog" },
+  { label: "TERMINAL", href: "/terminal" },
   { label: "CONTACT", href: "/contact" },
 ];
 

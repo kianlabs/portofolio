@@ -50,6 +50,12 @@ export default function Sidebar() {
       <Link href="/lab" className={`ide-row ide-indent-0${isActive("/lab") ? " active" : ""}`}>
         <span className="ide-chevron"> </span>lab.tsx
       </Link>
+      <Link href="/devlog" className={`ide-row ide-indent-0${isActive("/devlog") ? " active" : ""}`}>
+        <span className="ide-chevron"> </span>devlog.log
+      </Link>
+      <Link href="/terminal" className={`ide-row ide-indent-0${isActive("/terminal") ? " active" : ""}`}>
+        <span className="ide-chevron"> </span>terminal.sh
+      </Link>
       <Link href="/setup" className={`ide-row ide-indent-0${isActive("/setup") ? " active" : ""}`}>
         <span className="ide-chevron"> </span>setup.tsx
       </Link>

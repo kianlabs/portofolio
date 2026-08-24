@@ -11,6 +11,8 @@ const STATIC_LABELS: Record<string, string> = {
   "/lab": "lab.tsx",
   "/setup": "setup.tsx",
   "/hobbies": "hobbies.tsx",
+  "/devlog": "devlog.log",
+  "/terminal": "terminal.sh",
   "/contact": "contact.tsx",
 };
 

@@ -11,6 +11,8 @@ const commands = [
   { label: "setup.tsx", desc: "View PC setup & specs", path: "/setup" },
   { label: "hobbies.tsx", desc: "View Hobbies", path: "/hobbies" },
   { label: "contact.tsx", desc: "Go to Contact", path: "/contact" },
+  { label: "devlog.log", desc: "Read devlog entries", path: "/devlog" },
+  { label: "terminal.sh", desc: "Open interactive shell", path: "/terminal" },
 ];
 
 export default function CommandPalette() {

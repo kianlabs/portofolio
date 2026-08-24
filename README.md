@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KYAN.DEV — Terminal Portfolio
 
-## Getting Started
+Personal portfolio website styled as a developer IDE / terminal system.
+Live at **[kyandev.vercel.app](https://kyandev.vercel.app)**
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3-38bdf8)
+
+## ✦ Concept
+
+The whole site is an interface: you are "logged in" to my personal system.
+
+- **File explorer sidebar** — pages as files (`home.tsx`, `profile.tsx`, ...)
+- **Editor tabs** — visited pages open as closable tabs
+- **Command palette** — press `Ctrl+K` anywhere
+- **Boot sequence** — BIOS-style boot lines on load
+- **Interactive terminal** — `/terminal`, try `sudo hire-me`
+- **Kernel panic 404** — visit any unknown URL
+- **Easter egg** — type `arch` on any page
+
+## ✦ Tech Stack
+
+| Layer | Tools |
+|---|---|
+| Framework | Next.js 14 (App Router), React 18, TypeScript |
+| Styling | Tailwind CSS + CSS variables, Cozette pixel font |
+| Animation | Framer Motion, pure CSS keyframes |
+| Contact | Web3Forms (spam-protected) |
+| Hosting | Vercel |
+
+## ✦ Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home — identity, focus, featured project |
+| `/profile` | Identity, about, animated skill bars |
+| `/work` | Project directory with case studies |
+| `/lab` | Experiments & small projects |
+| `/setup` | My PC specs (`neofetch` style) |
+| `/hobbies` | What I do outside coding |
+| `/devlog` | Short build logs & notes |
+| `/terminal` | Interactive guest shell |
+| `/contact` | Working contact form → my inbox |
+
+## ✦ Run Locally
 
 ```bash
+git clone https://github.com/kianlabs/portofolio.git
+cd portofolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✦ Author
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Ridzkyan (Kyan)** — Web Developer, Kartasura Indonesia
 
-## Learn More
+- GitHub: [@kianlabs](https://github.com/kianlabs)
+- Site: [kyandev.vercel.app](https://kyandev.vercel.app)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*btw, i use arch.*
