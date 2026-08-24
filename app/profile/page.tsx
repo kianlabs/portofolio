@@ -80,26 +80,6 @@ export default function ProfilePage() {
           </div>
         </section>
 
-        {/* GITHUB */}
-        <section aria-label="GitHub" style={{ marginBottom: "14px" }}>
-          <SectionHeader label="GITHUB" />
-          <div style={{ maxWidth: "560px" }}>
-            <SystemField
-              label="PROFILE"
-              value={
-                <a
-                  href="https://github.com/kianlabs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "var(--text-sec)", textDecoration: "none" }}
-                >
-                  github.com/kianlabs ↗
-                </a>
-              }
-            />
-          </div>
-        </section>
-
         {/* CAPABILITIES */}
         <section aria-label="Capabilities" style={{ marginBottom: "14px" }}>
           <SectionHeader label="CAPABILITIES" />
