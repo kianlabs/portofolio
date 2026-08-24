@@ -87,30 +87,9 @@ export default function WorkDetailPage({ params }: { params: { slug: string } })
           </div>
         </div>
 
-        {/* screenshot */}
-        <div
-          style={{
-            border: "1px solid var(--border)",
-            backgroundColor: "var(--bg-secondary)",
-            aspectRatio: "16/9",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "24px",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          {project.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={project.image}
-              alt={`${project.name} screenshot`}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-          ) : (
-            <span style={{ fontSize: "11px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT / INTERFACE</span>
-          )}
+        {/* screenshot placeholder */}
+        <div style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg-secondary)", aspectRatio: "16/9", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px" }}>
+          <span style={{ fontSize: "11px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT / INTERFACE</span>
         </div>
 
         {/* content sections */}

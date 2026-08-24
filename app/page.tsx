@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import PageTransition from "@/components/PageTransition";
 import SectionHeader from "@/components/SectionHeader";
@@ -247,24 +246,19 @@ export default function Home() {
                   style={{
                     border: "1px solid var(--border)",
                     backgroundColor: "var(--bg-secondary)",
-                    aspectRatio: "16/9",
                     display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    alignItems: "stretch",
                     position: "relative",
                     overflow: "hidden",
                   }}
                 >
-                  {featured.image ? (
-                    <Image
+                  {featured.image && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
                       src={featured.image}
                       alt={`${featured.name} screenshot`}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
                     />
-                  ) : (
-                    <span style={{ fontSize: "11px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT</span>
                   )}
                 </div>
               </div>
