@@ -39,7 +39,9 @@ export default function LabPage() {
           {labItems.map((item, i) => (
             <div
               key={item.id}
+              className="fade-in"
               style={{
+                ["--d" as string]: `${i * 100}ms`,
                 padding: "16px 0",
                 borderBottom: i < labItems.length - 1 ? "1px solid var(--border)" : "none",
                 display: "grid",

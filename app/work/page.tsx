@@ -30,7 +30,7 @@ export default function WorkPage() {
           <span style={{ fontSize: "14px", letterSpacing: "0.14em", color: "var(--text-dim)" }}>DIRECTORY / WORK</span>
         </div>
 
-        <div style={{ marginBottom: "14px" }}>
+        <div className="fade-in" style={{ marginBottom: "14px", ["--d" as string]: "0ms" }}>
           <h1 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 600, letterSpacing: "0.04em", color: "var(--text-main)", marginBottom: "6px" }}>PROJECT DIRECTORY</h1>
           <div style={{ display: "flex", gap: "16px" }}>
             <span style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>NODES: {projects.length}</span>
@@ -41,7 +41,12 @@ export default function WorkPage() {
         </div>
 
         {/* FILTER */}
-        <div role="group" aria-label="Filter projects" style={{ display: "flex", gap: "4px", flexWrap: "wrap", marginBottom: "14px" }}>
+        <div
+          role="group"
+          aria-label="Filter projects"
+          className="fade-in"
+          style={{ ["--d" as string]: "80ms", display: "flex", gap: "4px", flexWrap: "wrap", marginBottom: "14px" }}
+        >
           {filters.map((f) => (
             <button
               key={f.value}
@@ -59,8 +64,10 @@ export default function WorkPage() {
         {/* PROJECT LIST */}
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <AnimatePresence mode="popLayout">
-            {filtered.map((project) => (
+            {filtered.map((project, idx) => (
               <motion.div
+                className="fade-in"
+                style={{ "--d": `${120 + idx * 90}ms` } as React.CSSProperties}
                 key={project.id}
                 layout
                 initial={{ opacity: 0, y: 4 }}

@@ -31,7 +31,7 @@ export default function Home() {
           <div>
             <SectionHeader label="USER PROFILE" meta="SYS_01" />
             <AsciiAvatar />
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div className="fade-in" style={{ flexDirection: "column", display: "flex", ["--d" as string]: "0ms" }}>
               <SystemField label="USER_ID" value="KYAN_01" />
               <SystemField
                 label="STATUS"
@@ -52,7 +52,7 @@ export default function Home() {
           <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
 
             {/* ── HERO NAME BLOCK ── */}
-            <div style={{ borderBottom: "1px solid var(--border)", paddingBottom: "16px" }}>
+            <div className="fade-in" style={{ borderBottom: "1px solid var(--border)", paddingBottom: "16px", ["--d" as string]: "80ms" }}>
               {/* big name */}
               <h1
                 style={{
@@ -98,7 +98,7 @@ export default function Home() {
             </div>
 
             {/* ── WHOAMI ── */}
-            <div>
+            <div className="fade-in" style={{ ["--d" as string]: "160ms" }}>
               <div
                 style={{
                   fontSize: "15px",
@@ -134,7 +134,7 @@ export default function Home() {
             </div>
 
             {/* ── CURRENT FOCUS ── */}
-            <div>
+            <div className="fade-in" style={{ ["--d" as string]: "240ms" }}>
               <div
                 style={{
                   fontSize: "15px",
@@ -179,7 +179,9 @@ export default function Home() {
 
             {/* ── QUICK LINKS ── */}
             <div
+              className="fade-in"
               style={{
+                ["--d" as string]: "320ms",
                 display: "flex",
                 gap: "8px",
                 flexWrap: "wrap",
@@ -204,7 +206,7 @@ export default function Home() {
 
         {/* ── FEATURED PROJECT ── */}
         {featured && (
-          <div style={{ marginTop: "28px" }}>
+          <div className="fade-in" style={{ marginTop: "28px", ["--d" as string]: "200ms" }}>
             <SectionHeader label="FEATURED_NODE / 01" />
             <div style={{ border: "1px solid var(--border)", padding: "18px" }}>
                 <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "24px" }}>

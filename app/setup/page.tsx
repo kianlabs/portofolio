@@ -24,7 +24,7 @@ export default function SetupPage() {
 
         <SectionHeader label="SETUP.TS" meta="hardware configuration" />
 
-        <div className="codeblock">
+        <div className="codeblock fade-in">
           <Ln n={line()}>
             <span className="tok-kw">const</span> <span className="tok-var">setup</span> = {"{"}
           </Ln>

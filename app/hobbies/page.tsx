@@ -31,7 +31,7 @@ export default function HobbiesPage() {
 
         <SectionHeader label="HOBBIES.TS" meta="runtime interests" />
 
-        <div className="codeblock">
+        <div className="codeblock fade-in">
           <Ln n={line()}>
             <span className="tok-kw">const</span> <span className="tok-var">hobbies</span>: <span className="tok-kw">string</span>[] = [
           </Ln>
