@@ -1,101 +1,264 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import PageTransition from "@/components/PageTransition";
+import SectionHeader from "@/components/SectionHeader";
+import SystemField from "@/components/SystemField";
+import AsciiAvatar from "@/components/AsciiAvatar";
+import GlitchText from "@/components/GlitchText";
+import TypingText from "@/components/TypingText";
+import { projects } from "@/lib/projects";
+
+const focusItems = [
+  "Full-stack web development",
+  "Modern frontend engineering",
+  "Backend architecture",
+  "Linux environment",
+];
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const featured = projects.find((p) => p.featured);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <PageTransition>
+      <div style={{ padding: "20px 20px", maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
+        <div style={{ marginBottom: "14px" }}>
+          <span style={{ fontSize: "13px", letterSpacing: "0.14em", color: "var(--text-dim)" }}>DIRECTORY / HOME</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr]" style={{ gap: "26px" }}>
+          {/* LEFT: IDENTITY BLOCK */}
+          <div>
+            <SectionHeader label="USER PROFILE" meta="SYS_01" />
+            <AsciiAvatar />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <SystemField label="USER_ID" value="KYAN_01" />
+              <SystemField
+                label="STATUS"
+                value={
+                  <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <span className="status-dot" />
+                    <span style={{ color: "var(--online)" }}>ONLINE</span>
+                  </span>
+                }
+              />
+              <SystemField label="LOCATION" value="Kartasura, Sukoharjo" />
+              <SystemField label="FOCUS" value="Web Development" />
+              <SystemField label="SYSTEM" value="Arch Linux" />
+            </div>
+          </div>
+
+          {/* RIGHT: HERO + INTRO */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+
+            {/* ── HERO NAME BLOCK ── */}
+            <div style={{ borderBottom: "1px solid var(--border)", paddingBottom: "16px" }}>
+              {/* big name */}
+              <h1
+                style={{
+                  fontSize: "clamp(40px, 6vw, 72px)",
+                  fontWeight: 700,
+                  letterSpacing: "0.03em",
+                  color: "var(--text-main)",
+                  lineHeight: 1,
+                  marginBottom: "10px",
+                  textTransform: "uppercase",
+                }}
+              >
+                <GlitchText text="RIDZKYAN" interval={4000} duration={350} />
+              </h1>
+
+              {/* callsign */}
+              <div
+                style={{
+                  fontSize: "17px",
+                  color: "var(--text-dim)",
+                  letterSpacing: "0.12em",
+                  marginBottom: "14px",
+                }}
+              >
+                U CAN CALL ME{" "}
+                <span style={{ color: "var(--text-sec)", fontWeight: 700 }}>KYAN</span>
+              </div>
+
+              {/* role */}
+              <div
+                style={{
+                  display: "inline-block",
+                  fontSize: "15px",
+                  color: "var(--text-dim)",
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  border: "1px solid var(--border)",
+                  padding: "4px 12px",
+                }}
+              >
+                <GlitchText text="WEB DEVELOPER" interval={5500} duration={280} />
+              </div>
+            </div>
+
+            {/* ── WHOAMI ── */}
+            <div>
+              <div
+                style={{
+                  fontSize: "14px",
+                  color: "var(--text-dim)",
+                  letterSpacing: "0.08em",
+                  marginBottom: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+              >
+                <span style={{ color: "var(--text-dim)" }}>$</span>
+                <span style={{ color: "var(--text-sec)" }}>
+                  <TypingText text="whoami" speed={80} delay={400} cursor={false} />
+                </span>
+              </div>
+              <p style={{ fontSize: "17px", color: "var(--text-main)", lineHeight: "1.8", maxWidth: "520px" }}>
+                <TypingText
+                  text="Saya Ridzkyan, biasa dipanggil Kyan."
+                  speed={28}
+                  delay={1100}
+                  cursor={false}
+                />
+              </p>
+              <p style={{ fontSize: "17px", color: "var(--text-sec)", lineHeight: "1.8", maxWidth: "520px", marginTop: "8px" }}>
+                <TypingText
+                  text="Saya membangun aplikasi web dan menikmati proses mengubah sebuah ide menjadi produk yang dapat digunakan."
+                  speed={16}
+                  delay={2400}
+                  cursor={false}
+                />
+              </p>
+            </div>
+
+            {/* ── CURRENT FOCUS ── */}
+            <div>
+              <div
+                style={{
+                  fontSize: "14px",
+                  color: "var(--text-dim)",
+                  letterSpacing: "0.08em",
+                  marginBottom: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+              >
+                <span style={{ color: "var(--text-dim)" }}>$</span>
+                <span style={{ color: "var(--text-sec)" }}>
+                  <TypingText text="current_focus" speed={65} delay={4400} cursor={false} />
+                </span>
+              </div>
+              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
+                {focusItems.map((item, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      fontSize: "15px",
+                      color: "var(--text-sec)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                    }}
+                  >
+                    <span style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.06em", minWidth: "28px" }}>
+                      [{String(i + 1).padStart(2, "0")}]
+                    </span>
+                    <TypingText
+                      text={item}
+                      speed={22}
+                      delay={5200 + i * 380}
+                      cursor={i === focusItems.length - 1}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* ── QUICK LINKS ── */}
+            <div
+              style={{
+                display: "flex",
+                gap: "8px",
+                flexWrap: "wrap",
+                paddingTop: "8px",
+                borderTop: "1px solid var(--border)",
+                marginTop: "auto",
+              }}
+            >
+              <Link href="/work" className="sys-btn">[03] VIEW WORK</Link>
+              <Link href="/contact" className="sys-btn">[05] CONTACT</Link>
+              <a
+                href="https://github.com/kianlabs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sys-btn"
+              >
+                GITHUB ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ── FEATURED PROJECT ── */}
+        {featured && (
+          <div style={{ marginTop: "28px" }}>
+            <SectionHeader label="FEATURED_NODE / 01" />
+            <div style={{ border: "1px solid var(--border)", padding: "18px" }}>
+                <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "24px" }}>
+                <div>
+                  <div style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.12em", marginBottom: "8px" }}>
+                    PROJECT_ID : {featured.id}
+                  </div>
+                  <h2
+                    style={{
+                      fontSize: "clamp(18px, 2.4vw, 22px)",
+                      fontWeight: 600,
+                      letterSpacing: "0.02em",
+                      color: "var(--text-main)",
+                      lineHeight: 1.25,
+                      marginBottom: "16px",
+                    }}
+                  >
+                    <GlitchText text={featured.name} interval={6000} duration={300} />
+                  </h2>
+                  <p style={{ fontSize: "17px", color: "var(--text-sec)", lineHeight: "1.7", marginBottom: "14px" }}>
+                    {featured.shortDesc}
+                  </p>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <SystemField label="TYPE" value={featured.type} />
+                    <SystemField label="YEAR" value={String(featured.year)} />
+                    <SystemField label="STACK" value={featured.stack.join(" / ")} />
+                    <SystemField label="STATUS" value={featured.status} />
+                  </div>
+                  <div style={{ display: "flex", gap: "8px", marginTop: "20px", flexWrap: "wrap" }}>
+                    <Link href={`/work/${featured.slug}`} className="sys-btn">VIEW CASE STUDY</Link>
+                    {featured.githubUrl && (
+                      <a href={featured.githubUrl} target="_blank" rel="noopener noreferrer" className="sys-btn">
+                        SOURCE CODE ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <div
+                  style={{
+                    border: "1px solid var(--border)",
+                    backgroundColor: "var(--bg-secondary)",
+                    aspectRatio: "16/9",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <span style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>SCREENSHOT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </PageTransition>
   );
 }
