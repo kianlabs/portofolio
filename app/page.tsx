@@ -56,7 +56,7 @@ export default function Home() {
               {/* big name */}
               <h1
                 style={{
-                  fontSize: "clamp(40px, 6vw, 72px)",
+                  fontSize: "clamp(30px, 9vw, 72px)",
                   fontWeight: 700,
                   letterSpacing: "0.03em",
                   color: "var(--text-main)",

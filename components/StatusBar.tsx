@@ -6,12 +6,10 @@ export default function StatusBar() {
       style={{
         borderTop: "1px solid var(--border)",
         backgroundColor: "var(--bg-panel)",
-        padding: "6px 16px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
+        padding: "6px 12px",
         flexShrink: 0,
       }}
+      className="status-bar-inner"
       role="contentinfo"
     >
       <span style={{ fontSize: "14px", letterSpacing: "0.12em", color: "var(--text-dim)", display: "flex", alignItems: "center", gap: "6px" }}>

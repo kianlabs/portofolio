@@ -31,8 +31,8 @@ export default function LocalClock() {
 
   return (
     <span style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", letterSpacing: "0.08em", color: "var(--text-dim)", fontVariantNumeric: "tabular-nums", textTransform: "uppercase" }}>
-      <span>{dateStr}</span>
-      <span style={{ color: "var(--text-main)", fontWeight: 700 }}>{timeStr} WIB</span>
+      <span className="clock-date">{dateStr}</span>
+      <span className="clock-time">{timeStr} WIB</span>
     </span>
   );
 }

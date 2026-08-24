@@ -112,8 +112,8 @@ body::after {
 .system-frame {
   position: relative;
   z-index: 10;
-  margin: 32px;
-  min-height: calc(100vh - 64px);
+  margin: 10px;
+  min-height: calc(100vh - 20px);
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
@@ -121,8 +121,8 @@ body::after {
 
 @media (min-width: 1024px) {
   .system-frame {
-    margin: 56px;
-    min-height: calc(100vh - 112px);
+    margin: 32px;
+    min-height: calc(100vh - 64px);
   }
 }
 
@@ -363,6 +363,71 @@ textarea.sys-input {
   width: 9px;
   height: 9px;
   border: 1px solid var(--border);
+}
+
+/* ── RESPONSIVE HEADER / STATUS BAR ── */
+.sys-header-inner {
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sys-header-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.header-id {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.clock-date { color: var(--text-dim); }
+
+.clock-time {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.status-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .sys-header-title {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .header-id {
+    display: none;
+  }
+
+  .sys-header-meta {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .clock-date {
+    display: none;
+  }
+
+  .sys-header-title {
+    font-size: 10px;
+  }
 }
 
 /* ── COMMAND PALETTE ── */
