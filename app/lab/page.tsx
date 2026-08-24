@@ -39,7 +39,7 @@ export default function LabPage() {
           {labItems.map((item, i) => (
             <div
               key={item.id}
-              className="fade-in"
+              className="lab-row fade-in"
               style={{
                 ["--d" as string]: `${i * 100}ms`,
                 padding: "16px 0",

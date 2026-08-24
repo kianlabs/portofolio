@@ -43,7 +43,8 @@ export default function HobbiesPage() {
           <Ln n={line()}>{"]"};</Ln>
           <Ln n={line()}></Ln>
           <Ln n={line()}>
-            <span className="tok-var">hobbies</span>.<span className="tok-fn">forEach</span>(<span className="tok-var">h</span> =&gt; <span className="tok-var">life</span>.<span className="tok-fn">enjoy</span>(h));
+            <span className="tok-var">hobbies</span>.<span className="tok-fn">forEach</span>(<span className="tok-var">h</span> =&gt; <span className="tok-var">life</span>.<span className="tok-fn">enjoy</span>(h));{" "}
+            <span className="cursor-blink" />
           </Ln>
         </div>
 

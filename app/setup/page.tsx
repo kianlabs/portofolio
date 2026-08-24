@@ -37,7 +37,8 @@ export default function SetupPage() {
           <Ln n={line()}>{"}"};</Ln>
           <Ln n={line()}></Ln>
           <Ln n={line()}>
-            <span className="tok-kw">export default</span> <span className="tok-var">setup</span>;
+            <span className="tok-kw">export default</span> <span className="tok-var">setup</span>;{" "}
+            <span className="cursor-blink" />
           </Ln>
         </div>
 

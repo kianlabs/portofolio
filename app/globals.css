@@ -192,6 +192,26 @@ body::after {
   transition: border-color 0.15s, background 0.15s;
 }
 
+@media (hover: hover) {
+  .project-row:hover {
+    background: rgba(216, 216, 210, 0.04);
+    box-shadow: inset 3px 0 0 var(--online);
+  }
+}
+
+.lab-row {
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) {
+  .lab-row:hover {
+    background: rgba(216, 216, 210, 0.03);
+    box-shadow: inset 2px 0 0 var(--online);
+  }
+}
+
 .project-row:hover {
   border-color: var(--border-active);
   background: rgba(216,216,210,0.02);
@@ -228,20 +248,62 @@ textarea.sys-input {
 
 
 /* ── IDE SHELL ── */
-.menubar {
+.menubar-wrap {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+
+.menubar-scroll {
   display: flex;
   align-items: center;
   gap: 2px;
   padding: 3px 8px;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-panel);
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
 }
 
-.menubar::-webkit-scrollbar {
+.menubar-scroll::-webkit-scrollbar {
   display: none;
+}
+
+.menubar-wrap::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to left, var(--bg-panel), transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menubar-wrap.no-fade::after {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .menubar-wrap.no-fade::after,
+  .menubar-wrap::after {
+    opacity: 0;
+  }
+}
+
+.menubar-swipe {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  color: var(--online);
+  font-size: 16px;
+  pointer-events: none;
+  animation: swipe-hint 1.4s ease-in-out infinite;
+}
+
+@keyframes swipe-hint {
+  0%, 100% { transform: translate(-8px, -50%); opacity: 0.5; }
+  50% { transform: translate(0, -50%); opacity: 1; }
 }
 
 .menubar-item {

@@ -64,8 +64,8 @@ export default function DevlogPage() {
           ))}
         </div>
 
-        <p style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.06em", marginTop: "12px" }}>
-          {"// more entries will be appended as life keeps compiling."}
+        <p style={{ fontSize: "13px", color: "var(--text-dim)", letterSpacing: "0.06em", marginTop: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
+          {"// more entries will be appended as life keeps compiling."} <span className="cursor-blink" />
         </p>
       </div>
     </PageTransition>
