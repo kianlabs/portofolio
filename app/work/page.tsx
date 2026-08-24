@@ -31,7 +31,7 @@ export default function WorkPage() {
         </div>
 
         <div style={{ marginBottom: "14px" }}>
-          <h1 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 600, letterSpacing: "0.04em", color: "var(--text-main)", marginBottom: "4px" }}>PROJECT DIRECTORY</h1>
+          <h1 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 600, letterSpacing: "0.04em", color: "var(--text-main)", marginBottom: "6px" }}>PROJECT DIRECTORY</h1>
           <div style={{ display: "flex", gap: "16px" }}>
             <span style={{ fontSize: "14px", color: "var(--text-dim)", letterSpacing: "0.1em" }}>NODES: {projects.length}</span>
             <span style={{ fontSize: "14px", color: "var(--online)", letterSpacing: "0.1em", display: "flex", alignItems: "center", gap: "4px" }}>

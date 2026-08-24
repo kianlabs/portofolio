@@ -136,9 +136,9 @@ body::after {
   display: inline-block;
   border: 1px solid var(--border);
   color: var(--text-sec);
-  padding: 4px 12px;
+  padding: 6px 16px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
