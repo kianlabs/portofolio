@@ -31,15 +31,26 @@ The whole site is an interface: you are "logged in" to my personal system.
 
 | Route | Description |
 |---|---|
-| `/` | Home — identity, focus, featured project |
-| `/profile` | Identity, about, animated skill bars |
+| `/` | Home — identity, ASCII avatar, featured project |
+| `/profile` | Identity, about, animated skill bars, currently learning |
 | `/work` | Project directory with case studies |
+| `/work/umkm-finance-classifier` | ML project — Gaussian Naïve Bayes classifier |
+| `/work/kyandev-web-services` | Web services business — landing page, pricing, WhatsApp integration |
+| `/work/portfolio-v1` | First portfolio — HTML/CSS/JS (archived) |
 | `/lab` | Experiments & small projects |
 | `/setup` | My PC specs (`neofetch` style) |
 | `/hobbies` | What I do outside coding |
 | `/devlog` | Short build logs & notes |
 | `/terminal` | Interactive guest shell |
-| `/contact` | Working contact form → my inbox |
+| `/contact` | Working contact form (Web3Forms) → inbox |
+
+## ✦ Projects
+
+| Project | Stack | Status |
+|---|---|---|
+| **UMKM Finance Classifier** | Python, Flask, Gaussian Naïve Bayes, MySQL | Completed |
+| **KyanDev Web Services** | Next.js, React, TypeScript, Tailwind CSS, GSAP, Lucide React | Completed |
+| **Portfolio v1** | HTML, CSS, JavaScript | Archived |
 
 ## ✦ Run Locally
 
@@ -57,7 +68,8 @@ Open http://localhost:3000
 **Ridzkyan (Kyan)** — Web Developer, Kartasura Indonesia
 
 - GitHub: [@kianlabs](https://github.com/kianlabs)
-- Site: [kyandev.vercel.app](https://kyandev.vercel.app)
+- Portfolio: [kyandev.vercel.app](https://kyandev.vercel.app)
+- Web Services: [kyanweb.vercel.app](https://kyanweb.vercel.app)
 
 ---
 
