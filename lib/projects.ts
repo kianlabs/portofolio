@@ -59,20 +59,22 @@ export const projects: Project[] = [
       "Layanan jasa pembuatan website — landing page, company profile, web application, dan maintenance.",
     year: 2026,
     type: "WEB",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Laravel", "PostgreSQL"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Lucide React"],
     status: "COMPLETED",
     featured: true,
     liveUrl: "https://kyanweb.vercel.app",
     overview:
-      "Website bisnis untuk layanan jasa pembuatan website. Menampilkan daftar layanan, contoh pekerjaan, pricing transparan, FAQ, dan integrasi WhatsApp untuk konsultasi gratis.",
+      "Website bisnis untuk layanan jasa pembuatan website. Multi-halaman dengan hero animation, daftar layanan, pricing transparan, selected work showcase, FAQ, dan integrasi WhatsApp untuk konsultasi gratis.",
     problem:
-      "Butuh platform profesional untuk menawarkan jasa pembuatan website — mulai dari landing page hingga web application — dengan pricing yang jelas dan cara kontak yang mudah.",
+      "Butuh platform profesional untuk menawarkan jasa pembuatan website — mulai dari landing page hingga web application — dengan pricing yang jelas, cara kontak yang mudah, dan kesan modern.",
     solution:
-      "Membangun website multi-halaman dengan section layanan (Landing Page, Company Profile, Web Application, Maintenance), pricing breakdown, selected work showcase, cara kerja, FAQ, dan form kontak + WhatsApp button.",
+      "Membangun website 5 halaman (/layanan, /portfolio, /about, /kontak) dengan hero parallax + GSAP scroll animations, section layanan (Landing Page, Company Profile, Web Application, Maintenance), pricing breakdown, project showcase per klien, FAQ accordion, WhatsApp button, dan SEO optimization (sitemap + robots.txt).",
+    architecture:
+      "Next.js App Router dengan TypeScript. Animasi scroll menggunakan GSAP (parallax, reveal, marquee). Icons dari Lucide React. Styling Tailwind CSS. Dynamic route /portfolio/[slug] untuk detail project klien. Template transisi halaman per-session.",
     challenges:
-      "Menyusun pricing yang transparan dan meyakinkan. Mengelola konten yang cukup banyak (layanan, FAQ, pricing) agar tetap rapi dan cepat diakses.",
+      "Menyusun pricing yang transparan dan meyakinkan. Mengelola konten yang cukup banyak (layanan, FAQ, pricing) agar tetap rapi. Animasi GSAP yang smooth tanpa mengorbankan performa di mobile.",
     learned:
-      "Bagaimana membangun website bisnis yang efektif — dari struktur konten, pricing psychology, hingga integrasi WhatsApp sebagai channel utama komunikasi dengan klien.",
+      "Bagaimana membangun website bisnis yang efektif — dari struktur konten, pricing psychology, GSAP scroll animations, hingga integrasi WhatsApp sebagai channel utama komunikasi dengan klien.",
   },
   {
     id: "003",
