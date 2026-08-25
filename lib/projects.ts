@@ -52,8 +52,32 @@ export const projects: Project[] = [
   },
   {
     id: "002",
-    slug: "portfolio-v1",
+    slug: "kyandev-web-services",
     index: 2,
+    name: "KyanDev Web Services",
+    shortDesc:
+      "Layanan jasa pembuatan website — landing page, company profile, web application, dan maintenance.",
+    year: 2026,
+    type: "WEB",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Laravel", "PostgreSQL"],
+    status: "COMPLETED",
+    featured: true,
+    liveUrl: "https://kyanweb.vercel.app",
+    overview:
+      "Website bisnis untuk layanan jasa pembuatan website. Menampilkan daftar layanan, contoh pekerjaan, pricing transparan, FAQ, dan integrasi WhatsApp untuk konsultasi gratis.",
+    problem:
+      "Butuh platform profesional untuk menawarkan jasa pembuatan website — mulai dari landing page hingga web application — dengan pricing yang jelas dan cara kontak yang mudah.",
+    solution:
+      "Membangun website multi-halaman dengan section layanan (Landing Page, Company Profile, Web Application, Maintenance), pricing breakdown, selected work showcase, cara kerja, FAQ, dan form kontak + WhatsApp button.",
+    challenges:
+      "Menyusun pricing yang transparan dan meyakinkan. Mengelola konten yang cukup banyak (layanan, FAQ, pricing) agar tetap rapi dan cepat diakses.",
+    learned:
+      "Bagaimana membangun website bisnis yang efektif — dari struktur konten, pricing psychology, hingga integrasi WhatsApp sebagai channel utama komunikasi dengan klien.",
+  },
+  {
+    id: "003",
+    slug: "portfolio-v1",
+    index: 3,
     name: "Portfolio v1",
     shortDesc: "Website portofolio personal versi pertama berbasis HTML/CSS/JS.",
     year: 2026,
